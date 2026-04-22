@@ -4,24 +4,22 @@
 
 using namespace std;
 
-string convertToUpper(const string& text)
+string toUpper(string text)
 {
-    string output = text;
-    for (size_t i = 0; i < output.length(); i++)
+    for (int i = 0; i < text.length(); i++)
     {
-        output[i] = toupper(output[i]);
+        text[i] = toupper(text[i]);
     }
-    return output;
+    return text;
 }
 
-string convertToLower(const string& text)
+string toLower(string text)
 {
-    string output = text;
-    for (size_t i = 0; i < output.length(); i++)
+    for (int i = 0; i < text.length(); i++)
     {
-        output[i] = tolower(output[i]);
+        text[i] = tolower(text[i]);
     }
-    return output;
+    return text;
 }
 
 int main()
@@ -33,33 +31,32 @@ int main()
     cout << "Вариант: Смена регистра" << endl;
     cout << "===============================" << endl << endl;
 
-    string userString;
-    int mode;
+    string str;
+    int choice;
 
-    cout << "Введите строку для обработки: ";
-    getline(cin, userString);
-
-    cout << endl;
-    cout << "Доступные операции:" << endl;
-    cout << "1 - Преобразовать строку в ЗАГЛАВНЫЕ буквы" << endl;
-    cout << "2 - Преобразовать строку в строчные буквы" << endl;
-    cout << "Введите номер операции (1 или 2): ";
-    cin >> mode;
+    cout << "Введите строку: ";
+    getline(cin, str);
 
     cout << endl;
-    cout << "Выполнение..." << endl;
+    cout << "Выберите действие:" << endl;
+    cout << "1 - Перевести в ВЕРХНИЙ регистр" << endl;
+    cout << "2 - Перевести в нижний регистр" << endl;
+    cout << "Ваш выбор: ";
+    cin >> choice;
 
-    if (mode == 1)
+    cout << endl;
+
+    if (choice == 1)
     {
-        cout << "Результат преобразования: " << convertToUpper(userString) << endl;
+        cout << "Результат: " << toUpper(str) << endl;
     }
-    else if (mode == 2)
+    else if (choice == 2)
     {
-        cout << "Результат преобразования: " << convertToLower(userString) << endl;
+        cout << "Результат: " << toLower(str) << endl;
     }
     else
     {
-        cout << "Ошибка: выбрана несуществующая операция." << endl;
+        cout << "Ошибка: неверный выбор." << endl;
     }
 
     cout << endl;
